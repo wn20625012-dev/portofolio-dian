@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Tersimpan - My Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #eaf5fc, #d5e8f7);
+            color: #456987;
+            min-height: 100vh;
+        }
+
+        nav {
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.6);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            color: #416b91;
+        }
+
+        nav a {
+            color: #527da5;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .container {
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .profile-card {
+            width: 100%;
+            max-width: 850px;
+            background: rgba(255,255,255,0.92);
+            border: 1px solid #d1e4f2;
+            border-radius: 28px;
+            padding: 48px;
+            box-shadow: 0 15px 40px rgba(75,120,160,0.13);
+            animation: muncul 1s ease;
+        }
+
+        .label {
+            color: #83aaca;
+            font-size: 11px;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #315b80;
+            font-size: clamp(42px, 7vw, 70px);
+            margin: 12px 0;
+        }
+
+        .deskripsi {
+            color: #829bb2;
+            font-size: 13px;
+            margin-bottom: 35px;
+        }
+
+        .profile-data {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .data-box {
+            padding: 20px;
+            border-radius: 15px;
+            background: #f1f7fc;
+            border: 1px solid #dceaf5;
+            transition: 0.3s;
+        }
+
+        .data-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(80,130,175,0.12);
+        }
+
+        .data-box span {
+            display: block;
+            color: #82a6c4;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .data-box p {
+            color: #456987;
+            font-size: 15px;
+            overflow-wrap: anywhere;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 12px;
+            background: linear-gradient(135deg, #8bb9dc, #578bb8);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(75,126,169,0.2);
+        }
+
+        .btn-home {
+            background: white;
+            color: #527da5;
+            border: 1px solid #c8ddeb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 11px;
+            color: #8ba4ba;
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .profile-card {
+                padding: 28px 20px;
+            }
+
+            .profile-data {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">My Portfolio ♡</div>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <section class="container">
+
+        <div class="profile-card">
+
+            <div class="label">WELCOME TO MY WORLD</div>
+
+            <h1>Profil Tersimpan</h1>
+
+            <p class="deskripsi">
+                Berikut adalah hasil data diri yang berhasil kamu simpan.
+            </p>
+
+            <div class="profile-data">
+
+                <div class="data-box">
+                    <span>NIM</span>
+                    <p id="hasilNim">-</p>
+                </div>
+
+                <div class="data-box">
+                    <span>NAMA LENGKAP</span>
+                    <p id="hasilNama">-</p>
+                </div>
+
+                <div class="data-box">
+                    <span>ALAMAT</span>
+                    <p id="hasilAlamat">-</p>
+                </div>
+
+                <div class="data-box">
+                    <span>HOBI</span>
+                    <p id="hasilHobi">-</p>
+                </div>
+
+                <div class="data-box">
+                    <span>INSTAGRAM</span>
+                    <p id="hasilInstagram">-</p>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+                <a href="profil.html" class="btn">Edit Profil ♡</a>
+                <a href="index.html" class="btn btn-home">Kembali ke Home</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        Designed with love ♡ | My Personal Portfolio
+    </footer>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("profilData"));
+
+        if (data) {
+            document.getElementById("hasilNim").textContent = data.nim || "-";
+            document.getElementById("hasilNama").textContent = data.nama || "-";
+            document.getElementById("hasilAlamat").textContent = data.alamat || "-";
+            document.getElementById("hasilHobi").textContent = data.hobi || "-";
+            document.getElementById("hasilInstagram").textContent = data.instagram || "-";
+        } else {
+            alert("Data belum tersimpan. Silakan isi form terlebih dahulu.");
+            window.location.href = "profil.html";
+        }
+    </script>
+
+</body>
+</html>

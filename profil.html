@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Profil - My Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #eaf3fa;
+            color: #496987;
+        }
+
+        nav {
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.65);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            color: #416b91;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #527da5;
+            font-size: 13px;
+        }
+
+        .form-section {
+            min-height: 100vh;
+            padding: 65px 8%;
+        }
+
+        .heading {
+            margin-bottom: 35px;
+        }
+
+        .heading span {
+            color: #83aaca;
+            font-size: 11px;
+            letter-spacing: 4px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(55px, 8vw, 85px);
+            color: #315b80;
+            margin: 10px 0;
+        }
+
+        .heading p {
+            color: #829bb2;
+            font-size: 13px;
+        }
+
+        .form-card {
+            max-width: 700px;
+            padding: 40px;
+            background: rgba(255,255,255,0.85);
+            border: 1px solid #d5e5f1;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(75,120,160,0.10);
+        }
+
+        .form-group {
+            margin-bottom: 23px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 9px;
+            color: #456987;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #d0e0ed;
+            background: #f6faff;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            color: #456987;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #80acd0;
+            box-shadow: 0 0 0 4px rgba(128,172,208,0.13);
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .btn-simpan {
+            padding: 14px 35px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #91bddf, #5e91bb);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-simpan:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(75,126,169,0.2);
+        }
+
+        .note {
+            margin-top: 18px;
+            font-size: 11px;
+            color: #91a9bf;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #91a9bf;
+            font-size: 11px;
+        }
+
+        @media(max-width: 600px) {
+            .form-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">My Portfolio ♡</div>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <section class="form-section">
+
+        <div class="heading">
+            <span>GET TO KNOW ME</span>
+            <h1>Form Profil</h1>
+            <p>Silakan lengkapi data diri kamu pada formulir berikut.</p>
+        </div>
+
+        <div class="form-card">
+
+            <form id="formProfil">
+
+                <div class="form-group">
+                    <label>NIM</label>
+                    <input type="text" id="nim"
+                    placeholder="Masukkan NIM kamu" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="nama"
+                    placeholder="Masukkan nama lengkap" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Alamat</label>
+                    <textarea id="alamat"
+                    placeholder="Masukkan alamat kamu" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Hobi</label>
+                    <input type="text" id="hobi"
+                    placeholder="Apa hobi kamu?" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Instagram</label>
+                    <input type="text" id="instagram"
+                    placeholder="@username" required>
+                </div>
+
+                <button type="submit" class="btn-simpan">
+                    Simpan Profil ♡
+                </button>
+
+                <p class="note">
+                    Pastikan semua data sudah benar sebelum disimpan.
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <footer>
+        My Personal Portfolio ♡
+    </footer>
+
+    <script>
+        document.getElementById("formProfil").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const data = {
+                nim: document.getElementById("nim").value,
+                nama: document.getElementById("nama").value,
+                alamat: document.getElementById("alamat").value,
+                hobi: document.getElementById("hobi").value,
+                instagram: document.getElementById("instagram").value
+            };
+
+            localStorage.setItem("profilData", JSON.stringify(data));
+
+            window.location.href = "profil-tampil.html";
+
+        });
+    </script>
+
+</body>
+</html>
